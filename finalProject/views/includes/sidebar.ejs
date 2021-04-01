@@ -1,0 +1,45 @@
+<script>
+    function w3_open() {
+        document.getElementById("main").style.marginLeft = "25%";
+        document.getElementById("mySidebar").style.width = "25%";
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = 'none';
+    }
+
+    function w3_close() {
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block";
+    } 
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="sidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+
+        <a href="#" class="sidebarcloseBtn" onclick="w3_close()"><i class="fa fa-times"></i></a>
+
+        <div class="flex-sidebar-parent">
+            <div class="side-menu">
+                <P onclick="window.location.href = '../../../../../../../Dash/home';" style="cursor: pointer;">Home</P>
+            </div>
+           
+            <div class="side-menu">
+                <P onclick="window.location.href = '../../../../../../../Dash/products';" style="cursor: pointer;">View Products</P>
+            </div>
+            <div class="side-menu">
+                <P onclick="window.location.href = '../../../../../../../orderhistory/orderData';" style="cursor: pointer;">Invoice History</P>
+            </div>
+            <div class="side-menu">
+                <P onclick="window.location.href = '../../../../../../../Dash/posts';" style="cursor: pointer;">View Posts</P>
+            </div>
+            <div class="side-menu">
+                <P onclick="window.location.href = '../../../../../../../article/articledata';" style="cursor: pointer;">View Articles</P>
+            </div>
+            <div class="side-menu">
+                <P onclick="window.location.href = '../../../../../../../Dash/logout';" style="cursor: pointer;">Login/Logout</P>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva:ProfilePage</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+    
+    <div id="main">
+
+
+
+        <header>
+
+
+            <div class="single-product-banner-text">
+                <div class="single-product-paurchesh-div">
+                    
+                            <h3 class="animate__animated animate__bounce">Invoice</h3>
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+       
+        <div class="container" style="margin-top: 3%;">
+
+            <form method="post">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">First Name : </label>
+                  <div class="col-sm-10">
+                    <input type="text"  class="form-control-plaintext" id="staticEmail" value="<%= userdata.fname %>" name="fname">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label  class="col-sm-2 col-form-label">Last Name :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" value="<%= userdata.lname %>" name="lname"> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Email Id :</label>
+                    <div class="col-sm-10">
+                      <input type="text" read only class="form-control" value="<%= userdata.emailAddress %>" name="emailAddress"> 
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Billing Address: </label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="<%= userdata.billingAddress %>" name="billingAddress">  
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Shipping Address: </label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="<%= userdata.shippingAddress %>" name="shippingAddress">  
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Contact Number: </label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="<%= userdata.contactNo %>" name="contactNo">  
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Password:</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" value="<%= userdata.password %>" name="password"> 
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Birth Date:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value=" <%= userdata.bdate %>" name="bdate">
+                    </div>
+                </div>
+                <% if (updated) { %>
+                    <h3 style="color: green;">Data Has been updated!</h3>
+                 <% } %>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-primary">Update Now</button>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                   
+               
+              </form>       
+         
+
+    </div>
+    </div>
+
+        <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>

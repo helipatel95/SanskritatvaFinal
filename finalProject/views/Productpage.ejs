@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All products</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+    
+    <div id="main">
+
+
+
+        <header>
+
+
+            <div class="product-banner-text">
+                <div class="product-paurchesh-div">
+                     <h1 class="animate__animated animate__fadeInLeftBig">All Our Products</h1>
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+       
+
+        <div class="container" style="margin-top: 3%;">
+
+           
+            <hr>
+            <div class="grid-container-collection">
+
+                <% for(var i=0; i < data.length; i++) { %>
+                    <div class="card" style="margin:2%;">
+                        <a href="./products/<%= data[i].category_id %>/<%= data[i].category_name %>">
+                            <img class="card-img-top" src="/images/<%= data[i].category_image %>" alt="Card image" style="width:100%">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;"><%= data[i].category_name %></h4>
+                            <p class="card-text" style="text-align: center;"></p>
+    
+                        </div>
+                    </div>
+
+                    
+                 <% } %>
+
+
+                <!-- <div class="card" style="margin:2%;">
+                    <a href="./books">
+                        <img class="card-img-top" src="https://www.tagheuer.com/on/demandware.static/-/Sites-tagheuer-master/default/dw966c7624/TAG_Heuer_Connected_/BT6233/BT6233_000913.png?impolicy=cropresize&width=448&height=340" alt="Card image" style="width:100%">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align: center;">Books</h4>
+                        <p class="card-text" style="text-align: center;"></p>
+
+                    </div>
+                </div> -->
+              
+                
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>

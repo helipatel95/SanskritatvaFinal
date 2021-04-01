@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva:Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+    
+    <div id="main">
+
+
+
+        <header>
+
+
+            <div class="single-product-banner-text">
+                <div class="single-product-paurchesh-div">
+                    
+                            <h3 class="animate__animated animate__bounce">Invoice</h3>
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+       
+        <div class="container" style="margin-top: 3%;">
+            <form action="./invoiceData" method="POST">
+                <hr>
+                <div class="row">
+                    <div class="col-md-2">
+                        Name : 
+                    </div>
+                    <div class="col-md-10">
+                        <%= userdata.fname %> &nbsp; <%= userdata.lname %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Email : 
+                    </div>
+                    <div class="col-md-10">
+                        <%= userdata.emailAddress %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Contact : 
+                    </div>
+                    <div class="col-md-10">
+                        <%= userdata.contactNo %>
+                    </div>
+                </div>
+                <%if(userdata.billingAddress){%>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Billing Address : 
+                        </div>
+                        <div class="col-md-3">
+                            <%= userdata.billingAddress %>
+                        </div>
+                    </div>     
+                <% } else { %>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Billing Address : 
+                        </div>
+                        <div class="col-md-10">
+                            <textarea  name="billingAddress" rows="3">
+                                <%= userdata.billingAddress %>
+                            </textarea>
+                        </div>
+                    </div>
+                <%}%>
+                <%if(userdata.shippingAddress){%>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Shipping Address : 
+                        </div>
+                        <div class="col-md-3">
+                            <%= userdata.shippingAddress %>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Shipping Address : 
+                        </div>
+                        <div class="col-md-10">
+                            <textarea  name="shippingAddress" rows="3">
+                                <%= userdata.shippingAddress %>
+                            </textarea>
+                        </div>
+                    </div>
+                <%}%>
+              
+                <%if(addresserror){%>
+                    <div class="row">
+                        <div class="col-md-12">
+                           <p style="color: red;">Please enter valid Shipping and billing Address</p>
+                        </div>
+                    </div>
+                <% } else { %>
+                    
+                <%}%>
+               
+               
+                <hr>
+                <% var total = 0; %>
+                <% for(var i=0; i < cartdata.length; i++) { %>
+                    <div class="row">
+                        <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-3">
+                            <img style="width: 80px;height: 80px;text-align: center;"  src="/images/<%= cartdata[i].product_image %>" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                               <%= cartdata[i].product_name %>
+                            </div>
+                            <div class="row">
+                              Qty : 1
+                            </div>
+                            <div class="row">
+                                Price $ : <%= cartdata[i].product_price %>.00
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            
+                            
+                        </div>
+                    </div>
+                   
+                       
+                    </div>
+                    
+                    <% total = cartdata[i].product_price + total; %>
+                    
+                 <% } %>
+    
+               <hr>
+               <div class="row">
+                   <div class="col-md-7">
+    
+                   </div>
+                   <div class="col-md-2">
+                      <input type="hidden" name="total" value="<%= total%>"></input>
+                       <h5 style="color: green;">Total : <%= total%>.00 CAD</h5>
+                       </div>
+                    <div class="col-md-3">
+                        <%if(invoicegenrated){%>
+                            
+                             <p style="color: green;">Order Placed Successfully</p>
+                                
+                        <% } else { %>
+                            <input type="submit" class="btn" value="Place Order" style="background-color: black;"></input>
+                        <%}%>
+                        
+                    </div>
+                       
+                </div>
+             </form>
+
+           </div>
+           
+                
+
+
+            
+
+
+
+
+
+
+        </div>
+
+        <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>

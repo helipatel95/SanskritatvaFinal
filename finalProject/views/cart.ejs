@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva:Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+    
+    <div id="main">
+
+
+
+        <header>
+
+
+            <div class="single-product-banner-text">
+                <div class="single-product-paurchesh-div">
+                    
+                            <h3 class="animate__animated animate__bounce">Cart</h3>
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+
+       
+       
+        <div class="container" style="margin-top: 3%;">
+        
+            <div class="row">
+                <div class="col-md-8">
+
+                    <% for(var i=0; i < data.length; i++) { %>
+                        <div class="row">
+                            <div class="row">
+                            <div class="col-md-3">
+                                <img style="width: 150px;height: 150px;text-align: center;"  src="/images/<%= data[i].product_image %>" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                   <h3><%= data[i].product_name %></h3> 
+                                </div>
+                                <div class="row">
+                                    <h5>Qty : 1</h5> 
+                                </div>
+                                <div class="row">
+                                    <h5>Price $ : <%= data[i].product_price %>.00</h5> 
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <form  action="./cartdata" method="POST">
+                                    <input type="hidden" name="productid" value="<%= data[i].product_id %>" />
+                                    <!-- <input type="submit" ><i class="fa fa-times" style="font-size: 20px;"></i></input> -->
+                                    <a href="#" onclick="this.parentNode.submit();"><i class="fa fa-times" style="font-size: 20px;"></i></a>
+                                </form>  
+                                
+                            </div>
+                        </div>
+                        <hr>
+                           
+                        </div>
+    
+                        
+                     <% } %>
+                    <!-- <div class="row">
+                        <div class="row">
+                        <div class="col-md-3">
+                            <img style="width: 150px;height: 150px;text-align: center;"  src="/images/Boo2.jpeg" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                               <h3>Product Name</h3> 
+                            </div>
+                            <div class="row">
+                                <h5>Qty : 1</h5> 
+                            </div>
+                            <div class="row">
+                                <h5>Price $ : </h5> 
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="#"><i class="fa fa-times" style="font-size: 20px;"></i></a>
+                        </div>
+                    </div>
+                    <hr>
+                       
+                    </div> -->
+                   
+                </div>
+                <div class="col-md-4">
+                    <mark><h2>Total :</h2></mark>
+                    <table class="table">
+                        <% var total = 0; %>
+                        <% for(var i=0; i < data.length; i++) { %>
+                            <tr>
+                                <td><%= data[i].product_name %></td>
+                                <td><%= data[i].product_price %>.00 CAD</td>
+                                <td><%= data[i].Qty %></td>
+                            </tr>
+                            <% total = data[i].product_price + total; %>
+                        <% } %>
+                        <tr>
+                            <th scope="row">Total :</th>
+                            <th scope="row"><%= total%>.00 CAD</th>
+                        </tr>
+                        
+                    </table>
+                    <table class="table">
+                        <tr>
+                            <a href="../../../../../../../../../../invoice/invoiceData" class="btn btn-outline-dark" style="background-color: black;">Go To Checkout</a>
+                        </tr>
+                    </table>
+                </div>
+               
+            </div>
+
+
+
+
+        </div>
+
+        </div>
+
+        <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    
+    <header>
+
+        
+        <div class="login-banner">
+            
+            <div class="login-box">
+                <img src="/images/NewLogo.jpeg" style="width: 60px;">
+                <h2>SignUp</h2>
+                <form action="./signup1" method = "post" style="min-width:800px;max-width: 800px;margin-top: 3%;">
+                    <div class="signupgrid">
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-user icon"></i>
+                                <input class="input-field" required type="text" placeholder="User Name" name="userName">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-user icon"></i>
+                                <input class="input-field" required type="text" placeholder="First Name" name="fname">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-phone icon"></i>
+                                <input class="input-field" required type="text" placeholder="Phone no" name="contactNo">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-user icon"></i>
+                                <input class="input-field" required type="text" placeholder="Last Name" name="lname">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-calendar icon"></i>
+                                <input class="input-field" required type="text" placeholder="Birthday" name="bdate">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-envelope icon"></i>
+                                <input class="input-field" required type="text" placeholder="Email" name="emailAddress">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-container">
+                                <i class="fa fa-key icon"></i>
+                                <input class="input-field" required type="password" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                    </div>
+                    <%if(error){%>
+                        <p style="color: red;">Invalid inputs All fileds are Reqired</p>
+                        <% } else { %>
+                          
+                    <%}%>
+                    <button class="login-btn" style="margin-bottom: 3%;">Sign Up</button>
+                </form>
+                <a href="./login" style="font-size: 15px; margin-top: 2%; width: 100%; text-align: center;"> Already Have An Account? Go To Login</a>
+            </div>
+
+        </div>
+    </header>
+
+
+   
+
+</body>
+
+</html>

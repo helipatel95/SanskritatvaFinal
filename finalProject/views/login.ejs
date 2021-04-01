@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+   
+    <header>
+
+
+        <div class="login-banner">
+
+            <div class="login-box">
+                <img src="/images/NewLogo.jpeg" style="width: 60px;">
+                <h2>Login</h2>
+                <form action="./login1" method="post"style="max-width:800px;min-width: 800px;;margin-top: 3%;">
+
+
+
+                    <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input-field" type="text" placeholder="Email" name="emailAddress">
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa fa-key icon"></i>
+                        <input class="input-field" type="password" placeholder="Password" name="psw">
+                    </div>
+
+                    <%if(typeof error == "undefined"){%>
+                       
+                 <% } else { %>
+                    <p style="color: red;"><%=error%></p>
+                    <%}%>
+
+                  
+                    
+                
+
+
+                    <button class="login-btn" style="margin-bottom: 3%;">Login</button>
+                </form>
+                <a href="./signup" style="font-size: 15px; margin-top: 3%; width: 100%; text-align: center;"> Don't Have Account? Sign Up</a>
+
+                <!-- <a href="./forgetpass" style="font-size: 15px; text-align: center;">Forgot Password?</a> -->
+            </div>
+
+        </div>
+    </header>
+
+
+    
+
+</body>
+
+</html>

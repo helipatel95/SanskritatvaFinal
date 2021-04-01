@@ -1,0 +1,18 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "This is the site for : sanskritatva, for those who are fonders of the Sanskrit by the fonders of the Sanskrit!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Heli, Rushita and Parshadi",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "node-localstorage": "^2.1.6",
+    "nodemon": "^2.0.7"
+  }
+}

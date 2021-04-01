@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+
+  
+        
+<div id="main">
+    <%- include('includes/header.ejs') %>
+
+    <header >
+        
+        
+        <div class="login-banner" style="padding-top: 90px;">
+           
+            <div class="login-box">
+                
+                <a href="./home"><img src="/images/NewLogo.jpeg" style="width: 60px;"></a>
+                <h2>Forgot Password</h2>
+                <form action="./login" method = "post" style="max-width:800px;min-width: 800px;;margin-top: 3%;">
+
+
+
+                    <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input-field" type="text" placeholder="Email" name="email">
+                    </div>
+
+                    <button class="login-btn" style="margin-bottom: 3%;">Send Code</button>
+                </form>
+                <a href="./login" style="font-size: 15px; margin-top: 3%; width: 100%; text-align: center;">Go back To Login</a>
+
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>

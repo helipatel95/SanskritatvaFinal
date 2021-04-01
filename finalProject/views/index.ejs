@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+
+    <div id="main">
+        
+        <header>
+            <div class="main-banner">
+                <div class="main-banner-text">
+                    <h1 style="font-size:50px">Welcome To SanskriTatva</h1>
+                    <p id="TimeP" style="font-size:25px;"></p>
+        
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+        
+        <div class="container" style="margin-top: 3%;">
+
+            <div class="newarrivalelabel">
+                <p class="newArrival-card-title-header">About Us</p>
+            </div>
+            <hr>
+            <div class="grid-container-newarrivale-main2">
+               
+                <div class="new-arrivale-flex-parent">
+                   
+                    <div>
+                        <p style="color: black;">
+                            This is where Sanskrit Tatva comes into the picture. The ‘Tatva’ in Sanskrit Tatva stands for tiniest part. Person could reach on extreme level in Sanskrit if person starts with tiniest effort.
+                        </p>
+                        <p style="color: black;">
+                            People in our generation are passive consumers of content. That means the content is presented to us every day by various social networks, news curators apps, etc. Whereas Sanskrit related content is not available in the ‘ready to serve’ format like quotes, posts or articles. It is mostly available in old phyiscal books or scanned digital files.  
+                        </p>
+                        <p style="color: black;">
+                            Our objective was to handpick relevant Subhashitas and Shlokas from various Sanskrit books, translate them in English and Hindi and finally decorate them using beautiful visual graphics that would catch audience’s attention to Sanskrit.
+                        </p>
+                        <p style="color: black;">
+                            Initially, people can simply visit instagram page named @sanskrit.tatva if they fascinated their instincts to ancient language they go through ‘link in bio’ as on the profile of the page, by reaching to websites there’s much more than brief description. 
+                        </p>
+                        <p style="color: black;">
+                            There has written numerous articles which are liked and shared generously by the audience. They can buy Sanskrit related merchandise like wall posters, wall frames, t-shirts, mugs, and mobile covers. By this initiative can reach out to even more audience and in turn propogate Sanskrit.
+                        </p>
+                        <p style="color: black;">
+                            They can make their profile on website to get updated and connected to the “only unambiguous spoken language on the planet,” which was apt for computer comprehension.
+                        </p>
+                    </div>
+                   
+
+                </div>
+
+            </div>
+            <hr>
+            <div class="newarrivalelabel">
+                <p class="newArrival-card-title-header">Why Sanskrit?</p>
+            </div>
+            <hr>
+            <div class="grid-container-newarrivale-main2">
+               
+                <div class="new-arrivale-flex-parent">
+                   
+                    <div>
+                        <p style="color: black;">
+                            This is where Sanskrit Tatva comes into the picture. The ‘Tatva’ in Sanskrit Tatva stands for tiniest part. PersSanskrit, without a doubt, is one of the oldest and most important languages in the world. A legacy which routes us to our source of origin. The knowledge it holds surmises its importance. on could reach on extreme level in Sanskrit if person starts with tiniest effort.
+                        </p>
+                        <p style="color: black;">
+                            संस्कृत (sáṃskṛta) – is a compound word consisting of sáṃ (together, good, well, perfected) and kṛta- (made, formed, work). It connotes a work that has been “well prepared, pure and perfect, polished, sacred”. 
+                        </p>
+                        <p style="color: black;">
+                            Sanskrit scriptures, some of them are 4000+ years old, are more than just religious; They also deal with philosophy, medicine, fitness, statecraft, law, science, mathematics, art, grammar, astrology, phonetics, interpretation and so on. The best part, almost all of the knowledge is still very relevant and applicable, even today. 
+                        </p>
+                        <p style="color: black;">
+                            The more you read Sanskrit, the more amazed you will be to discover its enriched manuscripts. Sanskrit is effective as it can help you form sentences using a minimal number of words in comparison to other languages. Sanskrit has words to define the exact meaning of emotions.
+                        </p>
+                        <p style="color: black;">
+                            For instance, in Sanskrit, love can be expressed using Kāma – काम (desire), Sneha – स्नेह​ (affection), Bhakti – भक्ति (devotion), and Priya प्रिय (dear) among a few others. 
+                        </p>
+                        <p style="color: black;">
+                            In fact, the words of Sanskrit are so definite that NASA had called it the “only unambiguous spoken language on the planet,” which was apt for computer comprehension. 
+                        </p>
+                        <p style="color: black;">
+                            It has been noted that the study of Sanskrit enhances the functioning and memory of the brain. However, the sad part is, because of the rising influence of western culture and some other internal factors in India, Sanskrit and its authentic knowledge have taken a back seat. 
+                        </p>
+                        <p style="color: black;">
+                            The language holds the knowledge of over 4,000 years in forms of scriptures, texts, hymns, and history. Ignoring such a vast ocean of information is a loss to mankind. It is a beautiful language and should not be lost into oblivion. 
+                             We need Sanskrit more than Sanskrit needs us.
+                        </p>
+                    </div>
+                   
+
+                </div>
+
+            </div>
+          
+        </div>
+
+
+
+        <%- include('includes/footer.ejs') %>
+ 
+    </div>
+</body>
+
+</html>

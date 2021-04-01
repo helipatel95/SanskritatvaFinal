@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva:Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+    
+    <div id="main">
+
+
+
+        <header>
+
+
+            <div class="single-product-banner-text">
+                <div class="single-product-paurchesh-div">
+                    
+                            <h3 class="animate__animated animate__bounce">Articles</h3>
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+
+       
+       
+        <div class="container" style="margin-top: 3%;">
+
+          <% for(var i=0; i < data.length; i++) { %>
+
+            <%if((i % 2) == 0){%>
+              <div class="grid-container-newarrivale-main">
+                <div>
+                    <img style="width: 90%;height: 90%;" src="/images/<%= data[i].article_image %>" alt="">
+                </div>
+                <div class="new-arrivale-flex-parent">
+                    <div>
+                        <p class="newArrival-card-title"><%= data[i].article_title %></p>
+                    </div>
+                    <div>
+                        <p style="color: black;">
+                          <%= data[i].article_details %>
+                        </p>
+                    </div>
+                   
+    
+                </div>
+    
+            </div>  
+              <% } else { %>
+                <div class="grid-container-newarrivale-main">
+
+                  <div class="new-arrivale-flex-parent">
+                      <div>
+                          <p class="newArrival-card-title"><%= data[i].article_title %></p>
+                      </div>
+                      <div>
+                          <p style="color: black;">
+                            <%= data[i].article_details %>
+                          </p>
+                      </div>
+                   
+        
+                  </div>
+                  <div>
+                      <img style="width: 90%;height: 90%;" src="/images/<%= data[i].article_image %>" alt="">
+                  </div>
+        
+              </div>
+                 <%}%>
+            <!-- <div class="grid-container-newarrivale-main">
+              <div>
+                  <img style="width: 90%;height: 90%;" src="/images/<%= data[i].article_image %>" alt="">
+              </div>
+              <div class="new-arrivale-flex-parent">
+                  <div>
+                      <p class="newArrival-card-title"><%= data[i].article_title %></p>
+                  </div>
+                  <div>
+                      <p style="color: black;">
+                        <%= data[i].article_details %>
+                      </p>
+                  </div>
+                 
+  
+              </div>
+  
+          </div> -->
+            
+         <% } %>
+        
+        <!-- <div class="grid-container-newarrivale-main">
+
+          <div class="new-arrivale-flex-parent">
+              <div>
+                  <p class="newArrival-card-title">Book 2</p>
+              </div>
+              <div>
+                  <p style="color: black;">
+                      Sanskrit as a language competed with numerous, less exact vernacular Indian languages called Prakritic languages (prākṛta-). The term prakrta literally means "original, natural, normal, artless", states Franklin Southworth.[50] The relationship between
+                      Prakrit and Sanskrit is found in Indian texts dated to the 1st millennium CE. Patañjali acknowledged that Prakrit is the first language.
+                  </p>
+              </div>
+           
+
+          </div>
+          <div>
+              <img style="width: 90%;height: 90%;" src="/images/Boo2.jpeg" alt="">
+          </div>
+
+      </div> -->
+
+
+
+
+        </div>
+
+        </div>
+
+        <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>

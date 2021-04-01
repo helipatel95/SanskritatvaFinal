@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sanskritatva:Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script>
+</head>
+
+<body>
+
+    <%- include('includes/sidebar.ejs') %>
+    
+    <div id="main">
+
+
+
+        <header>
+
+
+            <div class="single-product-banner-text">
+                <div class="single-product-paurchesh-div">
+                    
+                            <h3 class="animate__animated animate__bounce"><%= data[0].product_name %></h3>
+                </div>
+                <%- include('includes/header.ejs') %>
+            </div>
+        </header>
+
+       
+       
+        <div class="container" style="margin-top: 3%;">
+         <div class="productdata">
+            
+            <div class="left-column">
+                <img  src="/images/<%= data[0].product_image %>" alt="">
+            </div>
+        
+        
+              <!-- Right Column -->
+              <div class="right-column" style="margin-left: 5%;">
+        
+                <!-- Product Description -->
+                <div class="product-description">
+                  <span style="color: grey;"><%= categoryname %></span>
+                  <h1><%= data[0].product_name %></h1>
+                  <% if (data[0].product_auther) { %>
+                    <p style="color: grey;">Auther:  <%= data[0].product_auther %></p>
+                 <% } %>
+                  
+                  <hr>
+                  <h4  style="color: black; width: 90%;"><%= data[0].product_details %></h4>
+                  <hr>
+                </div>
+        
+               
+        
+                <!-- Product Pricing -->
+                <div class="row">
+                    <div class="col-md-12">
+                         <h3 style="text-align: center; color: green;">$ <%= data[0].product_price %>.00</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <% if (addedtocart) { %>
+                            <p style="color: green;">Added to cart!</p>
+                         <% } %>
+                        <form action="./<%= data[0].product_id %>" method="POST">
+                            <input type="hidden" name="productid" value="<%= data[0].product_id %>" />
+                            <input type="submit" class="btn" value="Add to cart" style="background-color: black;"></input>
+                        </form>
+                        <!-- <button type="button"  class="btn " style="background-color: black;">Add to cart</button> -->
+                   </div>
+                    
+                </div>
+              </div>
+               
+                
+                
+
+
+            </div>
+
+
+
+
+        </div>
+
+        </div>
+
+        <%- include('includes/footer.ejs') %>
+    </div>
+</body>
+
+</html>
