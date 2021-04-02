@@ -12,4 +12,5 @@ This Repository includes following:
 -prototype(made in just in mind)
 - database of the web application
 - Five testscripts and testcases from each of the team members seperately 
+- -Jira report
 
