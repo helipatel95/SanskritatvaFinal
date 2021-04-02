@@ -1,8 +1,10 @@
 # SanskritatvaFinal
+----------------------------------------------
 Done by:
 Heli Patel(1994098)
 Rushita Kheni (1994147)
 Parshadi Jariwala(1994459)
+-----------------------------------------------
 This Repository includes following:
 -final project web application files
 -test plan
